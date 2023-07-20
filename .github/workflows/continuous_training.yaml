@@ -2,7 +2,7 @@ name: Continuous training
 on:
   push:
     branches:
-    - 8_workflow_continuous_training
+      - 8_workflow_continuous_training
   schedule:
     - cron: '0 */6 * * *'   ##each 6 hours
   workflow_dispatch:
