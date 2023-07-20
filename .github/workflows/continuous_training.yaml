@@ -32,24 +32,24 @@ jobs:
            echo "Training Completed"
            dvc add model/model.pkl 
            dvc push model/model.pkl.dvc -r model-tracker
-        - name: Commit .dvc file changes
-          run: |
-            git config --local user.email "santiagorosasplaza@gmail.com"
-            git config --local user.name "github-actions[bot]"
-            git add model/model.pkl.dvc
-            git commit -m "Updating model serialization"
-        - uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: ${{ github.ref }} 
-        - uses: iterative/setup-cml@v1
-        - name: Push metrics
-          env:
-            REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: |
-            cat report.txt >> report.md
-            cml-publish prediction_behavior.png --md >> report.md
-            cml-send-comment report.md
+      - name: Commit .dvc file changes
+        run: |
+          git config --local user.email "santiagorosasplaza@gmail.com"
+          git config --local user.name "github-actions[bot]"
+          git add model/model.pkl.dvc
+          git commit -m "Updating model serialization"
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }} 
+      - uses: iterative/setup-cml@v1
+      - name: Push metrics
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat report.txt >> report.md
+          cml-publish prediction_behavior.png --md >> report.md
+          cml-send-comment report.md
 
 
 
