@@ -14,7 +14,14 @@ on:
 jobs:
   continuous-training:
     runs-on: ubuntu-latest
-    steps:
+    
+    permissions:
+      contents: write
+      pull-requests: write 
+      issues: read
+      packages: none
+    
+      steps:
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Train model
