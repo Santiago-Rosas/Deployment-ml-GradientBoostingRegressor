@@ -51,13 +51,9 @@ jobs:
       - name: Push metrics
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: | ## el agregar la imagen png provoca un error 
-          cat report.txt >> report.md          
-      - name: Push figure
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: | 
+          cat report.txt >> report.md
+          echo "## Plots" >> report.md
+          echo "### prediction_behavior " >> report.md
           echo "![](./prediction_behavior.png)" >> report.md   
           cml comment create report.md
-
-
