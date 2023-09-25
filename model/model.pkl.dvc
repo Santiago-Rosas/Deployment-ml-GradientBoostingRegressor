@@ -1,5 +1,5 @@
 outs:
-- md5: 0fdeb9567daf7c8ad4a77528a7d1cefd
-  size: 289571
+- md5: 746d09b12cbef1367443edccc62e8d8a
+  size: 288355
   hash: md5
   path: model.pkl
