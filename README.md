@@ -1,4 +1,4 @@
-# Model deployment of GradientBoostingRegressor model in movies dataset
+# GradientBoostingRegressor model deployment using movies dataset
 
 ###  workflow
 - Model construction and revision with Jupyter Notebook
