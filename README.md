@@ -1,4 +1,4 @@
-# Model deployment 
+# Model deployment of GradientBoostingRegressor model in movies dataset
 
 ###  workflow
 - Model construction and revision with Jupyter Notebook
@@ -8,6 +8,3 @@
 - Containerizationan using Docker
 -  CI/CD pipeline with GitHub Actions
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
